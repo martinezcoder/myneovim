@@ -2,9 +2,15 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require "user.packer-plugins"
-require "user.default"
-require "user.options"
-require "user.basic-keymaps"
-require "user.nvim-tree"
-require "user.telescope"
+require "packer-plugins"
+
+-- This file was originally copy&pasted https://github.com/nvim-lua/kickstart.nvim
+-- Then, it was split in the current folder structure
+-- The current remaining stuff in this file are concepts that I still need to explore
+require "default-init"
+
+require "options"
+require "basic-keymaps"
+
+require "plugin-setup.nvim-tree"
+require "plugin-setup.telescope"
