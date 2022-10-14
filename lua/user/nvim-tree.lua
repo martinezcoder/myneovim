@@ -2,3 +2,5 @@
 require("nvim-tree").setup()
 vim.keymap.set('n', '<Leader>n', ":NvimTreeToggle<CR>", { noremap = true })
 vim.keymap.set('n', '<Leader>N', ":NvimTreeFindFile<CR>", { noremap = true })
+vim.keymap.set('n', '<Leader>++', ":NvimTreeResize +5<CR>", { noremap = true })
+vim.keymap.set('n', '<Leader>--', ":NvimTreeResize -5<CR>", { noremap = true })

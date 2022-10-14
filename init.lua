@@ -2,7 +2,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require "user.packer"
+require "user.packer-plugins"
 require "user.default"
 require "user.options"
 require "user.basic-keymaps"
