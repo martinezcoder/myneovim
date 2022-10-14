@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/f.martinez/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/f.martinez/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/gruvbox-community/gruvbox"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/f.martinez/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
