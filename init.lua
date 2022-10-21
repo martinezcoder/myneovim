@@ -14,3 +14,4 @@ require "basic-keymaps"
 
 require "plugin-setup.nvim-tree"
 require "plugin-setup.telescope"
+require "plugin-setup.lualine"
