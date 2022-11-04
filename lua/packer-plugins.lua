@@ -12,8 +12,6 @@ require('packer').startup(function (use)
   -- packer can manage itself
   use 'wbthomason/packer.nvim'                                                         -- Package manager
 
-  use 'gruvbox-community/gruvbox'
-
   use 'tpope/vim-fugitive'                                                             -- Git commands in nvim
   use 'tpope/vim-rhubarb'                                                              -- Fugitive-companion to interact with github
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups

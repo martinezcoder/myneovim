@@ -30,12 +30,9 @@ vim.o.termguicolors = true
 --- I was not sure about my favourite colorscheme 
 --- therefore, I did a pre-selection and created 
 --- a function to randomly select one of them each time.
-local schemes = {"onedark", "desert", "evening", "slate", "gruvbox"}
-vim.cmd ("colorscheme "..schemes[math.random(1,5)])
+local schemes = {"onedark", "slate"}
+vim.cmd ("colorscheme "..schemes[math.random(1,2)])
 -- vim.cmd "colorscheme onedark"
--- vim.cmd "colorscheme gruvbox"
--- vim.cmd "colorscheme desert"
--- vim.cmd "colorscheme evening"
 -- vim.cmd "colorscheme slate"
 
 -- Set completeopt to have a better completion experience
