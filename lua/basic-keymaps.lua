@@ -15,3 +15,5 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<C-e>', ":tabnew<CR>", {})
 vim.keymap.set('n', '<C-h>', "gt", {})
 vim.keymap.set('n', '<C-c>', ":tabclose<CR>", {})
+
+vim.o.clipboard = 'unnamed'
