@@ -12,17 +12,22 @@ require('packer').startup(function (use)
   -- packer can manage itself
   use 'wbthomason/packer.nvim'                                                         -- Package manager
 
+
+  use 'neovim/nvim-lspconfig'                                                          -- Collection of configurations for built-in LSP client
+  use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
+  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
+  use 'hrsh7th/nvim-cmp' -- completion engine
+
   use 'tpope/vim-fugitive'                                                             -- Git commands in nvim
   use 'tpope/vim-rhubarb'                                                              -- Fugitive-companion to interact with github
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups
   use 'numToStr/Comment.nvim'                                                          -- "gc" to comment visual regions/lines
   use 'nvim-treesitter/nvim-treesitter'                                                -- Highlight, edit, and navigate code
   use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
-  use 'neovim/nvim-lspconfig'                                                          -- Collection of configurations for built-in LSP client
-  use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
-  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
+
   use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
   use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
+
   use 'mjlbach/onedark.nvim'                                                           -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim'                                                      -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim'                                            -- Add indentation guides even on blank lines
@@ -44,6 +49,8 @@ require('packer').startup(function (use)
       "olimorris/neotest-rspec",
     },
   }
+
+  use 'simrat39/symbols-outline.nvim' -- A tree like view for symbols in Neovim using the Language Server Protocol
 
   if is_bootstrap then
     require('packer').sync()
