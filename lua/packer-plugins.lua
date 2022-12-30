@@ -24,8 +24,15 @@ require('packer').startup(function (use)
   use 'nvim-treesitter/nvim-treesitter'                                                -- Highlight, edit, and navigate code
   use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
 
+  -- cmp plugins
   use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+
+  -- snippets
   use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
+  use 'rafamadriz/friendly-snippets'
 
   use 'mjlbach/onedark.nvim'                                                           -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim'                                                      -- Fancier statusline
