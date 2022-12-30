@@ -1,14 +1,15 @@
 local servers = {
-  "sumneko_lua",
+  "bashls",
   "cssls",
+  "graphql",
   "html",
-  "tsserver",
-  "pyright",
-   "bashls",
   "jsonls",
-   "yamlls",
+  "pyright",
   "solargraph",
-  "graphql"
+  "sumneko_lua",
+  "tailwindcss",
+  "tsserver",
+  "yamlls",
 }
 
 local settings = {
