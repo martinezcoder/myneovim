@@ -55,7 +55,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 require('mason').setup()
 
 -- Enable the following language servers
-local servers = { 'clangd', 'graphql', 'pyright', 'ruby_ls', 'rust_analyzer', 'solargraph', 'sumneko_lua', 'tsserver' }
+local servers = { 'clangd', 'cssls', 'graphql', 'html', 'jsonls', 'pyright', 'ruby_ls', 'rust_analyzer', 'sqlls', 'solargraph', 'sumneko_lua', 'tsserver' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {

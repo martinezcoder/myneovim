@@ -16,7 +16,6 @@ require('packer').startup(function (use)
   use 'neovim/nvim-lspconfig'                                                          -- Collection of configurations for built-in LSP client
   use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
   use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
-  use 'hrsh7th/nvim-cmp' -- completion engine
 
   use 'tpope/vim-fugitive'                                                             -- Git commands in nvim
   use 'tpope/vim-rhubarb'                                                              -- Fugitive-companion to interact with github
