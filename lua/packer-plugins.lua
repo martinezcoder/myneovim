@@ -29,6 +29,8 @@ require('packer').startup(function (use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
 
+  use { 'stevearc/aerial.nvim' }
+
   -- snippets
   use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
   use 'rafamadriz/friendly-snippets'
@@ -38,6 +40,7 @@ require('packer').startup(function (use)
   use 'williamboman/nvim-lsp-installer'                                                -- Simple to use language server installer
   use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
   use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
+  use 'slim-template/vim-slim'
 
   use 'nvim-lualine/lualine.nvim'                                                      -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim'                                            -- Add indentation guides even on blank lines
