@@ -63,6 +63,11 @@ require('packer').startup(function (use)
 
   use 'simrat39/symbols-outline.nvim' -- A tree like view for symbols in Neovim using the Language Server Protocol
 
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   if is_bootstrap then
     require('packer').sync()
   end
