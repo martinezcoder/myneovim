@@ -12,8 +12,8 @@ require('nvim-treesitter.configs').setup {
       init_selection = '<c-space>',
       node_incremental = '<c-space>',
       -- TODO: I'm not sure for this one.
-      scope_incremental = '<c-s>',
-      node_decremental = '<c-backspace>',
+--      scope_incremental = '<c-s>',
+--      node_decremental = '<c-backspace>',
     },
   },
   textobjects = {

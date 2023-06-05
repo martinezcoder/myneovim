@@ -17,3 +17,16 @@ vim.keymap.set('n', '<C-h>', "gt", {})
 vim.keymap.set('n', '<C-c>', ":tabclose<CR>", {})
 
 vim.o.clipboard = 'unnamed'
+
+-- Close certain windows with "q"
+vim.api.nvim_create_autocmd("FileType", {
+ pattern = {
+  "help",
+  "startuptime",
+  "qf",
+  "lspinfo",
+  "neotest-output",
+  "neotest-attach",
+  },
+  command = [[nnoremap <buffer><silent> q :close<CR>]],
+})

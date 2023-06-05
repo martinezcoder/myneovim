@@ -27,3 +27,6 @@ require "plugin-setup.treesitter"
 require "plugin-setup.lsp"
 require "plugin-setup.cmp"
 require "plugin-setup.aerial"
+require "plugin-setup.terminal"
+
+

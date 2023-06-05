@@ -16,7 +16,7 @@ require('packer').startup(function (use)
   use 'tpope/vim-rhubarb'                                                              -- Fugitive-companion to interact with github
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }            -- Add git related info in the signs columns and popups
   use 'numToStr/Comment.nvim'                                                          -- "gc" to comment visual regions/lines
-  use 'nvim-treesitter/nvim-treesitter'                                                -- Highlight, edit, and navigate code
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }                         -- Highlight, edit, and navigate code
   use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } } -- Additional textobjects for treesitter
 
   use 'mjlbach/onedark.nvim'                                                           -- Theme inspired by Atom
@@ -45,7 +45,7 @@ require('packer').startup(function (use)
   use 'nvim-lualine/lualine.nvim'                                                      -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim'                                            -- Add indentation guides even on blank lines
   use 'tpope/vim-sleuth'                                                               -- Detect tabstop and shiftwidth automatically
-  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', }, }    -- Nvim folders and files tree
+  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons', } }    -- Nvim folders and files tree
 
   -- Telescope
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } } -- Fuzzy Finder (files, lsp, etc)
