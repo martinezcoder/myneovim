@@ -36,7 +36,7 @@ M.setup = function()
       border = "rounded",
       source = "always",
       header = "",
-      prefix = "",
+      prefix = "[Lsp handler] ",
     },
   }
 
@@ -70,6 +70,19 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
+-- Here we let the LSP prioritize null-ls formatters. Why? Normally when we install a separate formatter or linter in null-ls we want to use just them.
+-- if you don't prioritize any, neovim will ask you every time you format which one you want to use.
+local lsp_formatting = function(bufnr)
+    vim.lsp.buf.format({
+        filter = function(client)
+          return client.name == "null-ls"
+        end,
+        bufnr = bufnr,
+    })
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false
@@ -85,6 +98,17 @@ M.on_attach = function(client, bufnr)
     return
   end
   illuminate.on_attach(client)
+
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        lsp_formatting(bufnr)
+      end,
+    })
+  end
 end
 
 return M

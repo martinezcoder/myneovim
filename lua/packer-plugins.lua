@@ -22,10 +22,10 @@ require('packer').startup(function (use)
   use 'mjlbach/onedark.nvim'                                                           -- Theme inspired by Atom
 
   -- cmp plugins
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }                    -- Autocompletion
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
 
@@ -40,6 +40,9 @@ require('packer').startup(function (use)
   use 'williamboman/nvim-lsp-installer'                                                -- Simple to use language server installer
   use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
   use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
+
+  use 'jose-elias-alvarez/null-ls.nvim' -- to show lints like rubocop
+
   use 'slim-template/vim-slim'
 
   use 'nvim-lualine/lualine.nvim'                                                      -- Fancier statusline

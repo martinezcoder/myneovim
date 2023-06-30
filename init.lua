@@ -19,6 +19,8 @@ require "default-init"
 require "options"
 require "basic-keymaps"
 
+require'nvim-treesitter.install'.compilers = { "clang" }
+
 require "plugin-setup.nvim-tree"
 require "plugin-setup.telescope"
 require "plugin-setup.lualine"
