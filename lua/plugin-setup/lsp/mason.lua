@@ -27,6 +27,19 @@ local servers = {
   "yamlls",
 }
 
+local status_ok_2, lspconfig = pcall(require, "lspconfig")
+if not status_ok_2 then
+    return
+end
+
+lspconfig.solargraph.setup({
+  settings = {
+    solargraph = {
+      rubocop = true
+    }
+  }
+})
+
 local settings = {
   ui = {
     border = "rounded",
