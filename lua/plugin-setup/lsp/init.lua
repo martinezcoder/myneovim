@@ -7,8 +7,6 @@ end
 
 require "plugin-setup.lsp.mason"
 require("plugin-setup.lsp.handlers").setup()
-require "plugin-setup.lsp.null-ls"
-
 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)

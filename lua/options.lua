@@ -35,6 +35,3 @@ local schemes = {"onedark", "slate"}
 vim.cmd ("colorscheme "..schemes[math.random(1,2)])
 -- vim.cmd "colorscheme onedark"
 -- vim.cmd "colorscheme slate"
-
-
-
