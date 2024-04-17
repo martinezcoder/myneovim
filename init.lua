@@ -30,6 +30,7 @@ require "plugin-setup.lsp"
 require "plugin-setup.cmp"
 require "plugin-setup.aerial"
 require "plugin-setup.terminal"
+require "plugin-setup.indent-blankline"
 
 vim.cmd[[
     command! -range=% -nargs=0 Formathash :<line1>,<line2>s/"\(\w*\)":/\1:/gc
