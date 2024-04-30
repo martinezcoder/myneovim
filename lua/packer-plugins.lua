@@ -37,7 +37,6 @@ require('packer').startup(function (use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'                                                          -- Collection of configurations for built-in LSP client
-  use 'williamboman/nvim-lsp-installer'                                                -- Simple to use language server installer
   use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
   use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
 
@@ -69,6 +68,8 @@ require('packer').startup(function (use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
+
+  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
 
   if is_bootstrap then
     require('packer').sync()
