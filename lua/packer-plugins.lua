@@ -71,6 +71,14 @@ require('packer').startup(function (use)
 
   use { "github/copilot.vim" }
 
+  -- Prettier and dependencies
+  -- Warning: Prettier won't be automatically installed by this plugin. You need to have it installed either globally or locally for the project.
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
+
+  -- Zen mode
+  use("folke/zen-mode.nvim")
+
   if is_bootstrap then
     require('packer').sync()
   end

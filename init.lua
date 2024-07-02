@@ -22,7 +22,7 @@ require "basic-keymaps"
 require'nvim-treesitter.install'.compilers = { "clang" }
 
 require "plugin-setup.nvim-tree"
-require "plugin-setup.telescope"
+require "plugin-setup.mytelescope"
 require "plugin-setup.lualine"
 require "plugin-setup.neotest"
 require "plugin-setup.treesitter"
@@ -31,6 +31,9 @@ require "plugin-setup.cmp"
 require "plugin-setup.aerial"
 require "plugin-setup.terminal"
 require "plugin-setup.indent-blankline"
+require "plugin-setup.null-ls"
+require "plugin-setup.prettier"
+require "plugin-setup.zen-mode"
 
 vim.cmd[[
     command! -range=% -nargs=0 Formathash :<line1>,<line2>s/"\(\w*\)":/\1:/gc
