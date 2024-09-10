@@ -22,7 +22,7 @@ local servers = {
   "pyright",
   "solargraph",
   "tailwindcss",
-  "tsserver",
+  "ts_ls",
   "vimls",
   "yamlls",
 }
