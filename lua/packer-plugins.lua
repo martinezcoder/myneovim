@@ -31,9 +31,10 @@ require('packer').startup(function (use)
 
   use { 'stevearc/aerial.nvim' }
 
+  -- NOTE: this is commented because it conflicts with the Copilot plugin
   -- snippets
-  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
-  use 'rafamadriz/friendly-snippets'
+  -- use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }                -- Snippet Engine and Snippet Expansion
+  -- use 'rafamadriz/friendly-snippets'
 
   -- LSP
   use 'neovim/nvim-lspconfig'                                                          -- Collection of configurations for built-in LSP client
