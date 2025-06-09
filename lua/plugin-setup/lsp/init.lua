@@ -5,7 +5,7 @@ if not status_ok then
   return
 end
 
-require "plugin-setup.lsp.mason"
+require("plugin-setup.lsp.mason")
 require("plugin-setup.lsp.handlers").setup()
 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

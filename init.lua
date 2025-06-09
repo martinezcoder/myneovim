@@ -31,7 +31,7 @@ require "plugin-setup.cmp"
 require "plugin-setup.aerial"
 require "plugin-setup.terminal"
 require "plugin-setup.indent-blankline"
-require "plugin-setup.null-ls"
+require "plugin-setup.none-ls"
 require "plugin-setup.prettier"
 require "plugin-setup.zen-mode"
 

@@ -38,8 +38,8 @@ require('packer').startup(function (use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'                                                          -- Collection of configurations for built-in LSP client
-  use 'williamboman/mason.nvim'                                                        -- Manage external editor tooling i.e LSP servers
-  use 'williamboman/mason-lspconfig.nvim'                                              -- Automatically install language servers to stdpath
+  use 'mason-org/mason.nvim'                              -- Mason: gestor de herramientas externas
+  use 'mason-org/mason-lspconfig.nvim'                    -- Mason + integración con lspconfig
 
   use 'slim-template/vim-slim'
 
@@ -74,7 +74,7 @@ require('packer').startup(function (use)
 
   -- Prettier and dependencies
   -- Warning: Prettier won't be automatically installed by this plugin. You need to have it installed either globally or locally for the project.
-  use('jose-elias-alvarez/null-ls.nvim')
+  use('nvimtools/none-ls.nvim') -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use('MunifTanjim/prettier.nvim')
 
   -- Zen mode

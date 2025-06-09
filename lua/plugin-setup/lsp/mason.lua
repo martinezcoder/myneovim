@@ -27,19 +27,6 @@ local servers = {
   "yamlls",
 }
 
-local status_ok_2, lspconfig = pcall(require, "lspconfig")
-if not status_ok_2 then
-    return
-end
-
-lspconfig.solargraph.setup({
-  settings = {
-    solargraph = {
-      rubocop = true
-    }
-  }
-})
-
 local settings = {
   ui = {
     border = "rounded",
@@ -53,35 +40,47 @@ local settings = {
   max_concurrent_installers = 4,
 }
 
+-- Setup Mason and Mason LSPConfig
 mason.setup(settings)
+
 mason_lspconfig.setup {
-    ensure_installed = servers,
-    automatic_installation = true,
+  ensure_installed = servers,
+ --   automatic_enable = false,
 }
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-  return
+-- Setup individual LSP servers
+local status_ok_2, lspconfig = pcall(require, "lspconfig")
+if not status_ok_2 then
+    return
 end
 
-local opts = {}
+-- Configuración específica para solargraph
+lspconfig.solargraph.setup({
+  cmd = { "bundle", "exec", "solargraph", "stdio" },
+  settings = {
+    solargraph = {
+      rubocop = true,
+    },
+  },
+})
 
--- loop through the servers
+-- Configuración genérica para los demás servidores
 for _, server in pairs(servers) do
-  opts = {
-     -- getting "on_attach" and capabilities from handlers
+  local opts = {
     on_attach = require("plugin-setup.lsp.handlers").on_attach,
     capabilities = require("plugin-setup.lsp.handlers").capabilities,
   }
 
-  -- get thet server name
+  -- Elimina versiones si vienen tipo "tsserver@1.2.3"
   server = vim.split(server, "@")[1]
 
-  local require_ok, conf_opts = pcall(require, "plugin-setup.lsp.settings." .. server)
-  if require_ok then
-    opts = vim.tbl_deep_extend("force", conf_opts, opts)
+  -- Si hay configuración específica, la combina
+  local has_custom_opts, server_opts = pcall(require, "plugin-setup.lsp.settings." .. server)
+  if has_custom_opts then
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
-  -- pass server to lspconfig
+  -- Configura el servidor
   lspconfig[server].setup(opts)
 end
+
