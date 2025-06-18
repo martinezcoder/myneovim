@@ -45,7 +45,10 @@ mason.setup(settings)
 
 mason_lspconfig.setup {
   ensure_installed = servers,
- --   automatic_enable = false,
+  automatic_installation = true,
+  handlers = {
+    ["ruby_lsp"] = function() end,
+  },
 }
 
 -- Setup individual LSP servers
@@ -54,33 +57,22 @@ if not status_ok_2 then
     return
 end
 
--- Configuración específica para solargraph
-lspconfig.solargraph.setup({
-  cmd = { "bundle", "exec", "solargraph", "stdio" },
-  settings = {
-    solargraph = {
-      rubocop = true,
-    },
-  },
-})
-
--- Configuración genérica para los demás servidores
+-- Generic configuration for all servers
 for _, server in pairs(servers) do
   local opts = {
     on_attach = require("plugin-setup.lsp.handlers").on_attach,
     capabilities = require("plugin-setup.lsp.handlers").capabilities,
   }
 
-  -- Elimina versiones si vienen tipo "tsserver@1.2.3"
+  -- Delete versions if they are of type "tsserver@1.2.3"
   server = vim.split(server, "@")[1]
 
-  -- Si hay configuración específica, la combina
+  -- Combines with specific configuration if a lua file exists for the server
   local has_custom_opts, server_opts = pcall(require, "plugin-setup.lsp.settings." .. server)
   if has_custom_opts then
     opts = vim.tbl_deep_extend("force", server_opts, opts)
   end
 
-  -- Configura el servidor
+  -- Configures the server
   lspconfig[server].setup(opts)
 end
-
